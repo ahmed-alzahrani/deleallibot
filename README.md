@@ -48,6 +48,7 @@ Deployment Instructions:
 
 
 To-Do List:
+===========
 
 1. Investigate case-sensitivity, ensure all different edge cases are being monitored, include misspellings? IE: Dele Alli vs. Delle Ali
 
@@ -60,3 +61,5 @@ are evaluated twice, currently this is being fixed by the sleep feature which is
 [HIGH PRIORITY]
 
 4. Investigate further into PRAW functionality to further populate to-do list
+
+5. Investigate YT video/img embedding in README on GitHub to pretty up the page a bit
