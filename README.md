@@ -24,10 +24,10 @@ His exploits have inspired the following chant, to the tune of Billy Ray Cyrus' 
  We've got Dele Alli"
 
  Original:
- https://www.youtube.com/watch?v=byQIPdHMpjc
+[![Achy-Breaky-Heart](https://img.youtube.com/vi/byQIPdHMpjc/0.jpg)](https://www.youtube.com/watch?v=byQIPdHMpjc)
 
  Dele Alli chant:
- https://www.youtube.com/watch?v=qvBqHMK49xQ
+ [![Dele_Alli_Chant](https://img.youtube.com/vi/qvBqHMK49xQ/0.jpg)](https://www.youtube.com/watch?v=qvBqHMK49xQ)
 
 The Bot:
 ==========

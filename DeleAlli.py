@@ -2,21 +2,22 @@ import praw
 import sys
 import time
 import threading
-import urllib2
-import ConfigParser #to read config file
+import urllib.request
+import urllib.error
+import configparser #to read config file
 
 #reading the config file
 
-config = ConfigParser.ConfigParser()
+config = configparser.ConfigParser()
 config.read('Dele_Alli_Bot.ini')
 
 green_light = True  #boolean to prevent dulpicate comments
 # reading from config file
 
 USERNAME = config.get('Authentication', 'Username')
-PASSWORD = config.get('AUthentication', 'Password')
+PASSWORD = config.get('Authentication', 'Password')
 
-USER_AGENT = "Dele_Alli_Bot by /u/yungliteskin"
+USER_AGENT = "Dele_Alli_Bot"
 MESSAGE = "We've got Alli! Dele Alli! \n I JUST! DON'T! THINK! YOU UNDERSTAAAAAND! \n HE ONLY COST 5 MILL! \n HE'S BETTER THAN ÖZIL! \n WE'VE GOT DELE ALLIIIIII!"
 
 def main():
@@ -104,14 +105,14 @@ def post_the_song(reply_to):
         reply_to.reply(MESSAGE)
 
     #If Reddit returns an error ((when the bot tries to post in an unauthorized sub))
-except urllib2.HTTPError as e:
-    print >> sys.stderr, "Got HTTPError from reddit:" + e.code
-    if e.code == 403:
-        print >> sys.stderr, "Posting in a restricted sub-reddit"
-    print << sys.stderr, "Nothing to see here."
+    except urllib2.HTTPError as e:
+        print >> sys.stderr, "Got HTTPError from reddit:" + e.code
+        if e.code == 403:
+            print >> sys.stderr, "Posting in a restricted sub-reddit"
+        print << sys.stderr, "Nothing to see here."
 
-except Exception as e:
-    print >> sys.stderr, "Got some non-HTTPError exception"
+    except Exception as e:
+        print >> sys.stderr, "Got some non-HTTPError exception"
 
 # Method to delete old comments that have been downvoted
 # Scans 25 comments every half hour, parameters: session
