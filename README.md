@@ -1,4 +1,4 @@
-Dele Alli Bot
+Dele Alli Bot V2.0
 ==============
 
 This is my first reddit bot based off of https://github.com/Antrikshy/InternetLyingPolice_reddit_bot
@@ -14,52 +14,43 @@ to Tottenham Hotspur of the premier league, for a transfer fee of only £5 milli
 He immediately earned himself a spot in the first team, and has during his two seasons at Tottenham helped them
 to 3rd and 2nd place finishes in the Premier League, winning back to back young player of the year awards, and scored an impressive 28 goals in 70 appearances.
 
-His exploits have inspired the following chant, to the tune of Billy Ray Cyrus' "Achy Breaky Heart" from Tottenham Hotspur fans:
-
-"We've got Alli,
- Delle Alli,
- I just don't think you understand,
- He only cost 5 mill
- He's better than Ozil,
- We've got Dele Alli"
-
- Original:
-[![Achy-Breaky-Heart](https://img.youtube.com/vi/byQIPdHMpjc/0.jpg)](https://www.youtube.com/watch?v=byQIPdHMpjc)
-
- Dele Alli chant:
- [![Dele_Alli_Chant](https://img.youtube.com/vi/qvBqHMK49xQ/0.jpg)](https://www.youtube.com/watch?v=qvBqHMK49xQ)
+This bot's designed to simply serve a random gif of Dele Alli whenever his name is mentioned in a particular subreddit.
 
 The Bot:
 ==========
-Making use of PRAW (Python Reddit API Wrapper) and it's comment_stream to continuously pull new comments.
-It then scans the comments read in until it is interrupted manually.
+Making use of PRAW (Python Reddit API Wrapper) the bot first authenticates itself based on the info the user provides in praw.ini
 
-Currently the authentication details are stored in a config file, simply change the key/value pairs to the appropriate
-account set up for the bot to run on.
+Additionally, the config file is used to set up additonal bot details such as the subreddit it should look in, how many comments it should scan at a time, key phrase(s) it is scanning for as well as the routes to the GIFS being supplied.
+
 
 Deployment Instructions:
 ========================
 1. Install PRAW (along with Python)
 
-2. In the config file, remove the .dist extension and configure the user/pass for your account
+2. Properly adjust the config file to reflect your personal running instance, and fill out the praw.ini file with the necessary details
 
 3. Run the bot from the command line via the following command:
   `python DeleAlli.py`
 
 
+V.2.00 CHANGES:
+===================
+
+The bot has been completely redesigned from 1.0 which replied with text and was based  off of https://github.com/Antrikshy/InternetLyingPolice_reddit_bot. It has been upgraded to work with Python 3.0. and has cut down on the
+number of imports made.
+
+The bot's actual course of action has been made much simpler too. After authenticating the reddit instance, the bot then
+uses a recursive algorithm, and the phrases in the config file to look for, and generates all case-sensitive variations
+of the strings provided. Once all the casings are generated, the bot looks through the comments on the relevant sub-reddit and
+responds with a random gif from the routes in config.
+
 To-Do List:
 ===========
 
-1. Investigate case-sensitivity, ensure all different edge cases are being monitored, include misspellings? IE: Dele Alli vs. Delle Ali
+1. Now that case-sensitivity is installed, can I also begin to account for spelling mistakes in a more elegant way than the list of phrases in config?
 
 2. Annoyance Control:
   2a. Limit responses to 1 per page? 1 Per comment tree?
-  2b. Point to specific relevant subreddit(s)? /r/coys, /r/soccer, /r/ThreeLions?
-
-3. green_light boolean is a weak cotrol structure, comments are seemingly being evaluated twice potentially as certain batches
-are evaluated twice, currently this is being fixed by the sleep feature which is itself problematic as comments can be missed.
-[HIGH PRIORITY]
+  2b. PM to stop function?
 
 4. Investigate further into PRAW functionality to further populate to-do list
-
-5. Investigate YT video/img embedding in README on GitHub to pretty up the page a bit
