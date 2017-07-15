@@ -45,6 +45,7 @@ of the strings provided. Once all the casings are generated, the bot looks throu
 responds with a random gif from the routes in config.
 
 V.2.1 CHANGES:
+==============
 
 - Text that links to the randomized gif changed from "hi" to "Did someone say Dele Alli?" (future consideration to matching the user's specific casing)
 
