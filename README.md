@@ -1,4 +1,4 @@
-Dele Alli Bot V2.0
+Dele Alli Bot V2.1
 ==============
 
 This is my first reddit bot based off of https://github.com/Antrikshy/InternetLyingPolice_reddit_bot
@@ -33,7 +33,7 @@ Deployment Instructions:
   `python DeleAlli.py`
 
 
-V.2.00 CHANGES:
+V.2.0 CHANGES:
 ===================
 
 The bot has been completely redesigned from 1.0 which replied with text and was based  off of https://github.com/Antrikshy/InternetLyingPolice_reddit_bot. It has been upgraded to work with Python 3.0. and has cut down on the
@@ -44,13 +44,10 @@ uses a recursive algorithm, and the phrases in the config file to look for, and 
 of the strings provided. Once all the casings are generated, the bot looks through the comments on the relevant sub-reddit and
 responds with a random gif from the routes in config.
 
-To-Do List:
-===========
+V.2.1 CHANGES:
 
-1. Now that case-sensitivity is installed, can I also begin to account for spelling mistakes in a more elegant way than the list of phrases in config?
+- Text that links to the randomized gif changed from "hi" to "Did someone say Dele Alli?" (future consideration to matching the user's specific casing)
 
-2. Annoyance Control:
-  2a. Limit responses to 1 per page? 1 Per comment tree?
-  2b. PM to stop function?
+- Archiving system added. To prevent the bot from replying to the same comment twice. The bot now populates a list by either: reading from a txt file labelled archive.txt in the project directory, or if that file is yet to exist it will be an empty list. Then, any time a comment is judged to include Dele Alli in any casing, that comment's unique ID is appended to the archive list being used locally within the function, and writing it into an archive.txt file in the project directory for future usage.
 
-4. Investigate further into PRAW functionality to further populate to-do list
+- Because the bot now says his name in the reply, to prevent an infinite loop the bot also does a check to ensure it isn't the author of a comment before it replies

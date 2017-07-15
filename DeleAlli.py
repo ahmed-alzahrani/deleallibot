@@ -31,8 +31,9 @@ def botAuthenticate():
     return reddit
 
 def doIreply(comment, archive, reddit):
-    # return comment.id not in archive and comment.author != reddit.user.me()
-    return comment.id not in archive
+    return comment.id not in archive and comment.author != reddit.user.me()
+
+    # return comment.id not in archive  used for self-testing
 
 def getAllCasings(lookFor, allCasings):
     for string in lookFor:
